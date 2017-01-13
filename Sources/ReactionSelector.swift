@@ -262,4 +262,8 @@ extension ReactionSelector {
             return UIColor(cgColor: fillColor)
         }
     }
+    
+    public func adjustSize() {
+        self.frame.size = self.boundsToFit().size
+    }
 }
