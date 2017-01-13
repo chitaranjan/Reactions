@@ -38,7 +38,7 @@ import UIKit
 public final class ReactionSelector: UIReactionControl {
   private var reactionIconLayers: [CALayer] = []
   private var reactionLabels: [UILabel]     = []
-  private let backgroundLayer               = Components.reactionSelect.backgroundLayer()
+  fileprivate let backgroundLayer               = Components.reactionSelect.backgroundLayer()
   private var _reactions: [Reaction]        = Reaction.facebook.all
 
   /**
@@ -245,4 +245,21 @@ public final class ReactionSelector: UIReactionControl {
 
     return nil
   }
+}
+
+extension ReactionSelector {
+    
+    public var fillColor : UIColor? {
+        set(newValue) {
+            backgroundLayer.fillColor = newValue?.cgColor
+        }
+        
+        get {
+            guard let fillColor = backgroundLayer.fillColor else {
+                return nil
+            }
+            
+            return UIColor(cgColor: fillColor)
+        }
+    }
 }
