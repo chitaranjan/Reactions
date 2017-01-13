@@ -69,7 +69,7 @@ public final class ReactionSelector: UIReactionControl {
   public weak var feedbackDelegate: ReactionFeedbackDelegate?
 
   /// The selector feedback state.
-  public internal(set) var feedback: ReactionFeedback? {
+  public var feedback: ReactionFeedback? {
     didSet {
       if oldValue != feedback { feedbackDelegate?.reactionFeedbackDidChanged(feedback) }
     }
