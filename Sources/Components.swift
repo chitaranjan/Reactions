@@ -37,7 +37,7 @@ struct Components {
 
     static func reactionLabel(option: Reaction, height: CGFloat) -> UILabel {
       let title = option.title
-      let font  = UIFont(name: "HelveticaNeue", size: 10) ?? .systemFont(ofSize: 10)
+      let font  = option.font
 
       let size       = CGSize(width: 200, height: 200)
       let attributes = [NSFontAttributeName: font] as [String: Any]

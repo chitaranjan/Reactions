@@ -44,6 +44,9 @@ public struct Reaction {
   /// The reaction's icon image.
   public let icon: UIImage
 
+  /// The reaction's labels font
+  public let font: UIFont
+
   /**
    The reaction's alternative icon image.
    
@@ -59,14 +62,16 @@ public struct Reaction {
    - Parameter color: The reaction's color.
    - Parameter icon: The reaction's icon image.
    - Parameter alternativeIcon: The reaction's alternative icon image.
+   - Parameter Font: The reaction's labels font.
    - Returns: Newly initialized reaction with the specified properties.
    */
-  public init(id: String, title: String, color: UIColor, icon: UIImage, alternativeIcon: UIImage? = nil) {
+    public init(id: String, title: String, color: UIColor, icon: UIImage, alternativeIcon: UIImage? = nil, font: UIFont? = UIFont.systemFont(ofSize: 10)) {
     self.id              = id
     self.title           = title
     self.color           = color
     self.icon            = icon
     self.alternativeIcon = alternativeIcon
+    self.font            = font ?? UIFont.systemFont(ofSize: 10)
   }
 }
 
